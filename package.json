@@ -1,0 +1,23 @@
+{
+  "name": "@mailchimp/mailchimp_marketing",
+  "version": "3.0.19",
+  "description": "The official Node client library for the Mailchimp Marketing API",
+  "license": "Apache 2.0",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "jest --setupFiles dotenv/config"
+  },
+  "browser": {
+    "fs": false
+  },
+  "dependencies": {
+    "superagent": "3.7.0",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "mocha": "~2.3.4",
+    "sinon": "1.17.3",
+    "jest": "^26.2.2"
+  },
+  "types": "types.d.ts"
+}
