@@ -124,12 +124,6 @@ All URIs are relative to *https://server.api.mailchimp.com/3.0*
 | **conversations.getConversationMessages** | /conversations/{conversation_id}/messages |
 | **conversations.getConversationMessage** | /conversations/{conversation_id}/messages/{message_id} |
 | **conversations.createConversationMessage** | /conversations/{conversation_id}/messages |
-| **dashboard.ads** | /dashboard/ads |
-| **dashboard.audiences** | /dashboard/audiences |
-| **dashboard.charts** | /dashboard/charts |
-| **dashboard.ecommerce** | /dashboard/ecommerce |
-| **dashboard.engagement** | /dashboard/engagement |
-| **dashboard.homepage** | /dashboard/homepage |
 | **ecommerce.deleteStore** | /ecommerce/stores/{store_id} |
 | **ecommerce.deleteStoreCart** | /ecommerce/stores/{store_id}/carts/{cart_id} |
 | **ecommerce.deleteCartLineItem** | /ecommerce/stores/{store_id}/carts/{cart_id}/lines/{line_id} |
@@ -189,9 +183,6 @@ All URIs are relative to *https://server.api.mailchimp.com/3.0*
 | **ecommerce.addPromoRules** | /ecommerce/stores/{store_id}/promo-rules |
 | **ecommerce.setStoreCustomer** | /ecommerce/stores/{store_id}/customers/{customer_id} |
 | **ecommerce.addProductVariant** | /ecommerce/stores/{store_id}/products/{product_id}/variants/{variant_id} |
-| **externalAuths.get** | /external-auths/{system_id} |
-| **externalAuths.getCollection** | /external-auths |
-| **externalAuths.create** | /external-auths |
 | **facebookAds.list** | /facebook-ads |
 | **facebookAds.getAd** | /facebook-ads/{outreach_id} |
 | **fileManager.deleteFile** | /file-manager/files/{file_id} |
@@ -229,7 +220,6 @@ All URIs are relative to *https://server.api.mailchimp.com/3.0*
 | **lists.getListAbuseReportDetails** | /lists/{list_id}/abuse-reports/{report_id} |
 | **lists.getListRecentActivity** | /lists/{list_id}/activity |
 | **lists.getListClients** | /lists/{list_id}/clients |
-| **lists.getListExternalIds** | /lists/{list_id}/external-ids |
 | **lists.getListGrowthHistory** | /lists/{list_id}/growth-history |
 | **lists.getListGrowthHistoryByMonth** | /lists/{list_id}/growth-history/{month} |
 | **lists.getListInterestCategories** | /lists/{list_id}/interest-categories |
@@ -264,7 +254,6 @@ All URIs are relative to *https://server.api.mailchimp.com/3.0*
 | **lists.updateListMemberTags** | /lists/{list_id}/members/{subscriber_hash}/tags |
 | **lists.createList** | /lists |
 | **lists.batchListMembers** | /lists/{list_id} |
-| **lists.createListExternalId** | /lists/{list_id}/external-ids |
 | **lists.createListInterestCategory** | /lists/{list_id}/interest-categories |
 | **lists.createInterestCategoryInterest** | /lists/{list_id}/interest-categories/{interest_category_id}/interests |
 | **lists.addListMember** | /lists/{list_id}/members |
@@ -280,7 +269,6 @@ All URIs are relative to *https://server.api.mailchimp.com/3.0*
 | **lists.previewSegment** | /lists/{list_id}/preview-segment |
 | **lists.setListMember** | /lists/{list_id}/members/{subscriber_hash} |
 | **ping.get** | /ping |
-| **postcards.getAll** | /postcards |
 | **reporting.info** | /reporting |
 | **reporting.getFacebookAdsReportAll** | /reporting/facebook-ads |
 | **reporting.getFacebookAdReport** | /reporting/facebook-ads/{outreach_id} |
