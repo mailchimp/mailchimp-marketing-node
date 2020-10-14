@@ -315,7 +315,7 @@ All URIs are relative to *https://server.api.mailchimp.com/3.0*
 
 
 
-## Additional Client Libraries
+## Additional Libraries
 
 Mailchimp Marketing libraries are available in the following languages:
 
