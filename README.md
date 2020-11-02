@@ -69,7 +69,6 @@ All URIs are relative to *https://server.api.mailchimp.com/3.0*
 | **automations.listWorkflowEmailSubscribersRemoved** | /automations/{workflow_id}/removed-subscribers |
 | **automations.getRemovedWorkflowEmailSubscriber** | /automations/{workflow_id}/removed-subscribers/{subscriber_hash} |
 | **automations.updateWorkflowEmail** | /automations/{workflow_id}/emails/{workflow_email_id} |
-| **automations.update** | /automations/{workflow_id} |
 | **automations.create** | /automations |
 | **automations.pauseAllEmails** | /automations/{workflow_id}/actions/pause-all-emails |
 | **automations.startAllEmails** | /automations/{workflow_id}/actions/start-all-emails |
