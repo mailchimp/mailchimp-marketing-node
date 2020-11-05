@@ -1,3 +1,9 @@
+<p align="center">
+  <a href="https://mailchimp.com/developer/">
+    <img src="https://raw.githubusercontent.com/mailchimp/mailchimp-client-lib-codegen/master/resources/images/mcdev-banner.png" alt="Mailchimp Developer" width="100%" height="auto">
+  </a>
+</p>
+
 # Mailchimp Marketing – Node.js
 
 The official Node.js client library for the Mailchimp Marketing API
