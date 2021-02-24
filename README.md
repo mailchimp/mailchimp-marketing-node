@@ -127,6 +127,7 @@ All URIs are relative to *https://server.api.mailchimp.com/3.0*
 | **conversations.getConversationMessages** | /conversations/{conversation_id}/messages |
 | **conversations.getConversationMessage** | /conversations/{conversation_id}/messages/{message_id} |
 | **conversations.createConversationMessage** | /conversations/{conversation_id}/messages |
+| **customerJourneys.trigger** | /customer-journeys/journeys/{journey_id}/steps/{step_id}/actions/trigger |
 | **ecommerce.deleteStore** | /ecommerce/stores/{store_id} |
 | **ecommerce.deleteStoreCart** | /ecommerce/stores/{store_id}/carts/{cart_id} |
 | **ecommerce.deleteCartLineItem** | /ecommerce/stores/{store_id}/carts/{cart_id}/lines/{line_id} |
