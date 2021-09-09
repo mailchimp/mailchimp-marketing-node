@@ -1,6 +1,6 @@
 {
   "name": "@mailchimp/mailchimp_marketing",
-  "version": "3.0.61",
+  "version": "3.0.62",
   "description": "The official Node client library for the Mailchimp Marketing API",
   "license": "Apache 2.0",
   "main": "src/index.js",
@@ -18,5 +18,21 @@
     "mocha": "~2.3.4",
     "sinon": "1.17.3",
     "jest": "^26.2.2"
+  },
+  "homepage": "https://github.com/mailchimp/mailchimp-marketing-node",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mailchimp/mailchimp-marketing-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mailchimp/mailchimp-client-lib-codegen/issues"
+  },
+  "keywords": [
+    "mailchimp",
+    "api",
+    "v3"
+  ],
+  "engines": {
+    "node": ">=10.0.0"
   }
 }
