@@ -13,6 +13,9 @@
 
 ## Marketing
 
+### 3.0.65
+* Added a new API endpoint, `/3.0/account-exports`, allowing users to programatically export their account information
+
 ### 3.0.64
 * Fixes the output directory for the Changelog for the php client library
 

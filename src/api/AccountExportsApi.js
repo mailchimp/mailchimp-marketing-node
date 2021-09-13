@@ -19,13 +19,13 @@
 var ApiClient = require('../ApiClient');
 
 /**
- * FacebookAds service.
- * @module api/FacebookAdsApi
+ * AccountExports service.
+ * @module api/AccountExportsApi
  */
 
 /**
- * Constructs a new FacebookAdsApi. 
- * @alias module:api/FacebookAdsApi
+ * Constructs a new AccountExportsApi. 
+ * @alias module:api/AccountExportsApi
  * @class
  * @param {module:ApiClient} apiClient Optional API client implementation to use,
  * default to {@link module:ApiClient#instance} if unspecified.
@@ -34,18 +34,16 @@ module.exports = function(apiClient) {
   this.apiClient = apiClient || ApiClient.instance;
 
   /**
-   * List facebook ads
-   * Get list of Facebook ads.
+   * List account exports
+   * Get a list of account exports for a given account.
    * @param {Object} opts Optional parameters
    * @param {Array.<String>} opts.fields A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.
    * @param {Array.<String>} opts.excludeFields A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.
    * @param {Number} opts.count The number of records to return. Default value is 10. Maximum value is 1000 (default to 10)
    * @param {Number} opts.offset Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0. (default to 0)
-   * @param {module:model/String} opts.sortField Returns files sorted by the specified field.
-   * @param {module:model/String} opts.sortDir Determines the order direction for sorted results.
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2008} and HTTP response
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001} and HTTP response
    */
-  this.listWithHttpInfo = function(opts) {
+  this.listAccountExportsWithHttpInfo = function(opts) {
     opts = opts || {};
     var postBody = null;
 
@@ -55,9 +53,7 @@ module.exports = function(apiClient) {
       'fields': this.apiClient.buildCollectionParam(opts['fields'], 'csv'),
       'exclude_fields': this.apiClient.buildCollectionParam(opts['excludeFields'], 'csv'),
       'count': opts['count'],
-      'offset': opts['offset'],
-      'sort_field': opts['sortField'],
-      'sort_dir': opts['sortDir']
+      'offset': opts['offset']
     };
     var headerParams = {
     };
@@ -71,54 +67,45 @@ module.exports = function(apiClient) {
     var returnType = 'application/json';
 
     return this.apiClient.callApi(
-      '/facebook-ads', 'GET',
+      '/account-exports', 'GET',
       pathParams, queryParams, headerParams, formParams, postBody,
       authNames, contentTypes, accepts, returnType
     );
   }
   /**
-   * List facebook ads
-   * Get list of Facebook ads.
+   * List account exports
+   * Get a list of account exports for a given account.
    * @param {Object} opts Optional parameters
    * @param {Array.<String>} opts.fields A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.
    * @param {Array.<String>} opts.excludeFields A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.
    * @param {Number} opts.count The number of records to return. Default value is 10. Maximum value is 1000 (default to 10)
    * @param {Number} opts.offset Used for [pagination](https://mailchimp.com/developer/marketing/docs/methods-parameters/#pagination), this it the number of records from a collection to skip. Default value is 0. (default to 0)
-   * @param {module:model/String} opts.sortField Returns files sorted by the specified field.
-   * @param {module:model/String} opts.sortDir Determines the order direction for sorted results.
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2008}
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001}
    */
-  this.list = function(opts) {
-    return this.listWithHttpInfo(opts)
+  this.listAccountExports = function(opts) {
+    return this.listAccountExportsWithHttpInfo(opts)
       .then(function(response_and_data) {
         return response_and_data.data;
       });
   }
 
   /**
-   * Get facebook ad info
-   * Get details of a Facebook ad.
-   * @param {String} outreachId The outreach id.
-   * @param {Object} opts Optional parameters
-   * @param {Array.<String>} opts.fields A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.
-   * @param {Array.<String>} opts.excludeFields A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2009} and HTTP response
+   * Add export
+   * Create a new account export in your Mailchimp account.
+   * @param {module:model/CreateAnAccountExport} body 
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001Exports} and HTTP response
    */
-  this.getAdWithHttpInfo = function(outreachId, opts) {
-    opts = opts || {};
-    var postBody = null;
+  this.createAccountExportWithHttpInfo = function(body) {
+    var postBody = body;
 
-    // verify the required parameter 'outreachId' is set
-    if (outreachId === undefined || outreachId === null) {
-      throw new Error("Missing the required parameter 'outreachId' when calling ");
+    // verify the required parameter 'body' is set
+    if (body === undefined || body === null) {
+      throw new Error("Missing the required parameter 'body' when calling ");
     }
 
     var pathParams = {
-      'outreach_id': outreachId
     };
     var queryParams = {
-      'fields': this.apiClient.buildCollectionParam(opts['fields'], 'csv'),
-      'exclude_fields': this.apiClient.buildCollectionParam(opts['excludeFields'], 'csv')
     };
     var headerParams = {
     };
@@ -132,22 +119,19 @@ module.exports = function(apiClient) {
     var returnType = 'application/json';
 
     return this.apiClient.callApi(
-      '/facebook-ads/{outreach_id}', 'GET',
+      '/account-exports', 'POST',
       pathParams, queryParams, headerParams, formParams, postBody,
       authNames, contentTypes, accepts, returnType
     );
   }
   /**
-   * Get facebook ad info
-   * Get details of a Facebook ad.
-   * @param {String} outreachId The outreach id.
-   * @param {Object} opts Optional parameters
-   * @param {Array.<String>} opts.fields A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.
-   * @param {Array.<String>} opts.excludeFields A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2009}
+   * Add export
+   * Create a new account export in your Mailchimp account.
+   * @param {module:model/CreateAnAccountExport} body 
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001Exports}
    */
-  this.getAd = function(outreachId, opts) {
-    return this.getAdWithHttpInfo(outreachId, opts)
+  this.createAccountExport = function(body) {
+    return this.createAccountExportWithHttpInfo(body)
       .then(function(response_and_data) {
         return response_and_data.data;
       });

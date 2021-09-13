@@ -19,13 +19,13 @@
 var ApiClient = require('../ApiClient');
 
 /**
- * SearchCampaigns service.
- * @module api/SearchCampaignsApi
+ * AccountExport service.
+ * @module api/AccountExportApi
  */
 
 /**
- * Constructs a new SearchCampaignsApi. 
- * @alias module:api/SearchCampaignsApi
+ * Constructs a new AccountExportApi. 
+ * @alias module:api/AccountExportApi
  * @class
  * @param {module:ApiClient} apiClient Optional API client implementation to use,
  * default to {@link module:ApiClient#instance} if unspecified.
@@ -34,29 +34,29 @@ module.exports = function(apiClient) {
   this.apiClient = apiClient || ApiClient.instance;
 
   /**
-   * Search campaigns
-   * Search all campaigns for the specified query terms.
-   * @param {String} query The search query used to filter results.
+   * Get account export info
+   * Get information about a specific account export.
+   * @param {String} exportId The unique id for the account export.
    * @param {Object} opts Optional parameters
    * @param {Array.<String>} opts.fields A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.
    * @param {Array.<String>} opts.excludeFields A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/Campaigns} and HTTP response
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with an object containing data of type {@link module:model/InlineResponse2001Exports} and HTTP response
    */
-  this.searchWithHttpInfo = function(query, opts) {
+  this.getAccountExportsWithHttpInfo = function(exportId, opts) {
     opts = opts || {};
     var postBody = null;
 
-    // verify the required parameter 'query' is set
-    if (query === undefined || query === null) {
-      throw new Error("Missing the required parameter 'query' when calling ");
+    // verify the required parameter 'exportId' is set
+    if (exportId === undefined || exportId === null) {
+      throw new Error("Missing the required parameter 'exportId' when calling ");
     }
 
     var pathParams = {
+      'export_id': exportId
     };
     var queryParams = {
       'fields': this.apiClient.buildCollectionParam(opts['fields'], 'csv'),
-      'exclude_fields': this.apiClient.buildCollectionParam(opts['excludeFields'], 'csv'),
-      'query': query
+      'exclude_fields': this.apiClient.buildCollectionParam(opts['excludeFields'], 'csv')
     };
     var headerParams = {
     };
@@ -70,22 +70,22 @@ module.exports = function(apiClient) {
     var returnType = 'application/json';
 
     return this.apiClient.callApi(
-      '/search-campaigns', 'GET',
+      '/account-exports/{export_id}', 'GET',
       pathParams, queryParams, headerParams, formParams, postBody,
       authNames, contentTypes, accepts, returnType
     );
   }
   /**
-   * Search campaigns
-   * Search all campaigns for the specified query terms.
-   * @param {String} query The search query used to filter results.
+   * Get account export info
+   * Get information about a specific account export.
+   * @param {String} exportId The unique id for the account export.
    * @param {Object} opts Optional parameters
    * @param {Array.<String>} opts.fields A comma-separated list of fields to return. Reference parameters of sub-objects with dot notation.
    * @param {Array.<String>} opts.excludeFields A comma-separated list of fields to exclude. Reference parameters of sub-objects with dot notation.
-   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/Campaigns}
+   * @return {Promise} a {@link https://www.promisejs.org/|Promise}, with data of type {@link module:model/InlineResponse2001Exports}
    */
-  this.search = function(query, opts) {
-    return this.searchWithHttpInfo(query, opts)
+  this.getAccountExports = function(exportId, opts) {
+    return this.getAccountExportsWithHttpInfo(exportId, opts)
       .then(function(response_and_data) {
         return response_and_data.data;
       });
