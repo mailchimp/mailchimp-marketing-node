@@ -2,6 +2,9 @@
 
 ## Transactional
 
+### 1.0.44
+* Added a `set_timeout` method to the Client class in the Python SDK
+
 ### 1.0.43
 * Added a `setTimeout` method to the Configuration class in the PHP SDK.
 
