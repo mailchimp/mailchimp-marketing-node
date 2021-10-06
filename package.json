@@ -1,6 +1,6 @@
 {
   "name": "@mailchimp/mailchimp_marketing",
-  "version": "3.0.68",
+  "version": "3.0.69",
   "description": "The official Node client library for the Mailchimp Marketing API",
   "license": "Apache 2.0",
   "main": "src/index.js",

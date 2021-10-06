@@ -28,6 +28,9 @@
 
 ## Marketing
 
+### 3.0.69
+* Added handling for a `timeout` field in the config block passed to the client constructor in the Ruby Marketing SDK.
+
 ### 3.0.68
 * Added handling for a `'timeout'` field in `set_config()` in the Python Marketing SDK.
 
