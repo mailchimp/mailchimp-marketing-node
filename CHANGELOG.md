@@ -34,6 +34,9 @@
 
 ## Marketing
 
+### 3.0.72
+* Updated the `PATCH /automations/.../emails/.../` documentation to state the required `workflow_type`
+
 ### 3.0.70
 * Added more granularity for the `timeout` field in the Ruby Marketing SDK; now supports `read_timeout`, `write_timeout` and `connect_timeout` fields which will default to the `timeout` value.
 
