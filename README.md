@@ -247,6 +247,8 @@ All URIs are relative to *https://server.api.mailchimp.com/3.0*
 | **lists.getSegment** | /lists/{list_id}/segments/{segment_id} |
 | **lists.getSegmentMembersList** | /lists/{list_id}/segments/{segment_id}/members |
 | **lists.getListSignupForms** | /lists/{list_id}/signup-forms |
+| **lists.getAllSurveysForList** | /lists/{list_id}/surveys |
+| **lists.getSurvey** | /lists/{list_id}/surveys/{survey_id} |
 | **lists.getListWebhooks** | /lists/{list_id}/webhooks |
 | **lists.getListWebhook** | /lists/{list_id}/webhooks/{webhook_id} |
 | **lists.updateList** | /lists/{list_id} |
@@ -281,6 +283,13 @@ All URIs are relative to *https://server.api.mailchimp.com/3.0*
 | **reporting.getFacebookAdProductActivityReport** | /reporting/facebook-ads/{outreach_id}/ecommerce-product-activity |
 | **reporting.getLandingPageReportsAll** | /reporting/landing-pages |
 | **reporting.getLandingPageReport** | /reporting/landing-pages/{outreach_id} |
+| **reporting.getSurveyReportsAll** | /reporting/surveys |
+| **reporting.getSurveyReport** | /reporting/surveys/{outreach_id} |
+| **reporting.getSurveyQuestionReportsAll** | /reporting/surveys/{outreach_id}/questions |
+| **reporting.getSurveyQuestionReport** | /reporting/surveys/{outreach_id}/questions/{question_id} |
+| **reporting.getSurveyQuestionAnswers** | /reporting/surveys/{outreach_id}/questions/{question_id}/answers |
+| **reporting.getSurveyResponsesAll** | /reporting/surveys/{outreach_id}/responses |
+| **reporting.getSurveyResponse** | /reporting/surveys/{outreach_id}/responses/{response_id} |
 | **reports.getAllCampaignReports** | /reports |
 | **reports.getCampaignReport** | /reports/{campaign_id} |
 | **reports.getCampaignAbuseReports** | /reports/{campaign_id}/abuse-reports |
@@ -306,6 +315,8 @@ All URIs are relative to *https://server.api.mailchimp.com/3.0*
 | **root.getRoot** | / |
 | **searchCampaigns.search** | /search-campaigns |
 | **searchMembers.search** | /search-members |
+| **Surveys.publishSurvey** | /lists/{list_id}/surveys/{survey_id}/actions/publish |
+| **Surveys.unpublishSurvey** | /lists/{list_id}/surveys/{survey_id}/actions/unpublish |
 | **templateFolders.remove** | /template-folders/{folder_id} |
 | **templateFolders.list** | /template-folders |
 | **templateFolders.get** | /template-folders/{folder_id} |
